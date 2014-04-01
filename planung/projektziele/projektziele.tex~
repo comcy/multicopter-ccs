@@ -42,20 +42,21 @@
 		\item 	\textbf{Abschlusspräsentation} 
 	\end{itemize}
 	
-	Mögliche Umsetzungen zur Definition eines Abschluss-Ziels können im wesentlichen erst während der Arbeit abgeschätzt werden. Aufgrund der technischen Gegebenheiten, die den Aufbau des Multicopters 		beeinflussen, muss der Rahmen des Verwendungszweck vor Projektbeginn festgelegt werden. Dieser soll auf den Indoor-Bereich 		festgelegt werden um zunächst äußerliche Störfaktoren zu vermeiden. Eine 		autonome arbeitsweise steht hierbei im Vordergrund. Konkrete Ziele können nach ersten Tests klarer definiert werden. Bevor mit der eigentlichen Aufgabe begonnen wird, sollen Teilziele erreicht werden:
-	\begin{itemize}
-		\item korrekte Arbeitsweise der Mechatronik
-		\item manuelles Fliegen		
-		\item Flugstabilisation auf jeder Achse
-		\item Position-Holdings
-		\item teil-autonome Ausführungen (bspw. Befehl, mit einem Schub nach rechts zu driften/Anstieg bis auf gewisse Höhe) 
-	\end{itemize}
+\section{Beschreibung}
+	\subsection{Vorgehensweise}
+%		\begin{itemize}
+%			\item	Ermittelung von Meilensteinen mit grober Abschätzung des Zeitaufwands
+%			\item	Entwurf des Multicopter-Aufbaus\footnote{siehe Ziel der Arbeit}
+%			\item	Evaluierung diverser Schnittstellen und Sensoren
+%		\end{itemize}
+%	
 	
-	Nach Erreichen der Teilziele, wären folgende Umsetzungen denkbar:	
-	\begin{itemize}
-		\item Flug von Punkt zu Punkt
-		\item Flug einer gewissen Form im Raum
-	\end{itemize} 
+%	\subsection{Aufbau}
+%		\begin{itemize}
+%			\item	Vorgesehen werden vier Antriebe
+%			\item	
+%		\end{itemize}
+
 
 
 \end{document}
