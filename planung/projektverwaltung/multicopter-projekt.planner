@@ -20,19 +20,130 @@
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="Kickoff" note="" work="0" start="20140324T000000Z" end="20140324T000000Z" work-start="20140324T080000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work"/>
-    <task id="2" name="Projektplanung" note="" work="316800" start="20140324T000000Z" end="20140404T170000Z" work-start="20140324T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="1" name="Kickoff" note="" work="0" start="20140324T000000Z" end="20140324T000000Z" work-start="20140324T080000Z" percent-complete="100" priority="0" type="milestone" scheduling="fixed-work"/>
+    <task id="2" name="Projektplanung" note="" work="979200" start="20140324T000000Z" end="20140430T170000Z" work-start="20140324T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <task id="3" name="Definition von Projektzielen" note="" work="288000" start="20140324T000000Z" end="20140404T170000Z" work-start="20140324T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-      <task id="4" name="Technische Spezifikation" note="" work="28800" start="20140324T000000Z" end="20140324T170000Z" work-start="20140324T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="4" name="Technische Spezifikation" note="" work="518400" start="20140404T170000Z" end="20140430T170000Z" work-start="20140407T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="5" name="Bestellung vorbereiten" note="" work="172800" start="20140404T170000Z" end="20140414T170000Z" work-start="20140407T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
+        </predecessors>
+        <task id="6" name="Hardware-Anfragen an Flyduino" note="" work="115200" start="20140404T170000Z" end="20140410T170000Z" work-start="20140407T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="7" name="Bestellliste machen" note="" work="57600" start="20140410T170000Z" end="20140414T170000Z" work-start="20140411T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="6" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="8" name="Bestellung aufgeben" note="" work="0" start="20140414T170000Z" end="20140414T170000Z" work-start="20140414T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="7" type="FS"/>
+          </predecessors>
+        </task>
+      </task>
+    </task>
+    <task id="9" name="Bau des Multicopters" note="" work="489600" start="20140430T170000Z" end="20140514T170000Z" work-start="20140501T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="4" type="FS"/>
+      </predecessors>
+      <task id="10" name="Zusammenbau der Hardware" note="" work="403200" start="20140430T170000Z" end="20140509T170000Z" work-start="20140501T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="11" name="Konfiguration der Software" note="" work="86400" start="20140509T170000Z" end="20140514T170000Z" work-start="20140512T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="10" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="12" name="Testflug 1" note="" work="0" start="20140514T170000Z" end="20140514T170000Z" work-start="20140514T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="11" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="13" name="Evalierung alternativer Steuerkonzepte" note="" work="662400" start="20140514T170000Z" end="20140616T170000Z" work-start="20140515T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="9" type="FS"/>
+      </predecessors>
+      <task id="14" name="2,4 Ghz DSM Sender/Empf&#xE4;nger" note="" work="86400" start="20140514T170000Z" end="20140519T170000Z" work-start="20140515T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="15" name="Testflug 2" note="" work="0" start="20140519T170000Z" end="20140519T170000Z" work-start="20140519T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="14" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="16" name="..." note="" work="288000" start="20140519T170000Z" end="20140602T170000Z" work-start="20140520T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="15" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="17" name="Testflug 3" note="" work="0" start="20140602T170000Z" end="20140602T170000Z" work-start="20140602T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="16" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="18" name="..." note="" work="288000" start="20140602T170000Z" end="20140616T170000Z" work-start="20140603T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="17" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="19" name="Testflug 4" note="" work="0" start="20140616T170000Z" end="20140616T170000Z" work-start="20140616T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="18" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="20" name="Protokollierung Teil 1" note="" work="4089600" start="20140324T000000Z" end="20141007T170000Z" work-start="20140324T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="21" name="Protokollierung der Fortschritte 1" note="" work="4089600" start="20140324T000000Z" end="20141007T170000Z" work-start="20140324T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="22" name="Zwischenpr&#xE4;sentation" note="" work="0" start="20141007T170000Z" end="20141007T170000Z" work-start="20141007T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="21" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="23" name="Protokollierung Teil 2" note="" work="3312000" start="20141007T170000Z" end="20150317T170000Z" work-start="20141008T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="20" type="FS"/>
+      </predecessors>
+      <task id="24" name="Protokollierung der Fortschritte 2" note="" work="3312000" start="20141007T170000Z" end="20150317T170000Z" work-start="20141008T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="25" name="Abschlusspr&#xE4;sentation" note="" work="0" start="20150317T170000Z" end="20150317T170000Z" work-start="20150317T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="24" type="FS"/>
+        </predecessors>
+      </task>
     </task>
   </tasks>
   <resource-groups>
-    <group id="1" name="Elektroniker" admin-name="" admin-phone="" admin-email=""/>
-    <group id="2" name="Informatiker" admin-name="" admin-phone="" admin-email=""/>
+    <group id="1" name="Informatiker" admin-name="" admin-phone="" admin-email=""/>
+    <group id="2" name="Elektroniker" admin-name="" admin-phone="" admin-email=""/>
   </resource-groups>
   <resources>
-    <resource group="1" id="1" name="Michael W&#xF6;rner" short-name="mw" type="1" units="0" email="" note="" std-rate="0"/>
-    <resource group="2" id="2" name="Christian Silfang" short-name="cs" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource group="2" id="1" name="Michael W&#xF6;rner" short-name="mw" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource group="1" id="2" name="Christian Silfang" short-name="cs" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource group="2" id="3" name="Frank Kleesattel" short-name="fk" type="1" units="0" email="" note="" std-rate="0"/>
   </resources>
-  <allocations/>
+  <allocations>
+    <allocation task-id="19" resource-id="1" units="100"/>
+    <allocation task-id="17" resource-id="1" units="100"/>
+    <allocation task-id="15" resource-id="1" units="100"/>
+    <allocation task-id="1" resource-id="1" units="100"/>
+    <allocation task-id="10" resource-id="1" units="100"/>
+    <allocation task-id="12" resource-id="1" units="100"/>
+    <allocation task-id="2" resource-id="1" units="100"/>
+    <allocation task-id="19" resource-id="2" units="100"/>
+    <allocation task-id="17" resource-id="2" units="100"/>
+    <allocation task-id="15" resource-id="2" units="100"/>
+    <allocation task-id="1" resource-id="2" units="100"/>
+    <allocation task-id="8" resource-id="2" units="100"/>
+    <allocation task-id="11" resource-id="2" units="100"/>
+    <allocation task-id="12" resource-id="2" units="100"/>
+    <allocation task-id="5" resource-id="2" units="100"/>
+    <allocation task-id="2" resource-id="2" units="100"/>
+    <allocation task-id="19" resource-id="3" units="100"/>
+    <allocation task-id="17" resource-id="3" units="100"/>
+    <allocation task-id="15" resource-id="3" units="100"/>
+    <allocation task-id="1" resource-id="3" units="100"/>
+    <allocation task-id="10" resource-id="3" units="100"/>
+    <allocation task-id="12" resource-id="3" units="100"/>
+    <allocation task-id="2" resource-id="3" units="100"/>
+  </allocations>
 </project>
