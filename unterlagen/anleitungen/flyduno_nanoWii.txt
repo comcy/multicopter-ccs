@@ -1,0 +1,79 @@
+
+
+Kleine Multikopter FC.
+Das Original in seiner neusten Version ist eine voll funktionsfähige Multirotor Steuerung. Es müssen nur noch die gewünschten Pin's angelötet und die MultiWii Software aufgespielt werden. Es verfügt über Gyro und ACC kombiniert in dem MPU-6050 Chip.
+
+Es basiert auf dem ATmega32u4 Prozessor der auch auf dem Arduino Leonardo ist.
+Seine Vorteile im Vergleich zu einem ATmega328p (Pro Mini):
+
+- USB on Chip (es wird kein FTDI oder UART Adapter benötigt)
+- Ein freier Serial Port (es ist möglich ein Spektrum Satellite gleichzeitig mit der GUI zu verwenden)
+- 6 hochauflösende PWM Ausgänge (11-bit)
+- 2.5kB RAM
+
+Es wird mit dem aktuellen Arduino Leonardo bootloader der mit Arduino 1.0.1 veröffentlicht wurde geliefert. Wählen Sie einfach den Leonardo in Arduino aus, um das NanoWii in Arduino zu nutzen.
+
+Es wird ab MultiWii  2.1. Version voll unterstützt.
+
+Seit 5/2014 wird das Nanowii mit einer von Warthox und Felix Niessen modifizierten Multiwii Version vorgeflasht geliefert,
+diese bieten eine einfache GUI wo alles, bis auf das was weiterhin in der Multiwii GUI eingestellt wird , eingestellt werden kann, sprich der upload des Arduino sketches kann entfall, da schon erfolgt.
+Natürlich kann das Nanowii aber auch wie bisher selber geflasht werden.
+Gerade wer den Kopter im 3D Modus fliegen will sei diese Version ans Herz gelegt.
+
+Änderungen dieser Version:
+
+- Grundeinstellungen sind im EEprom gespeichert (nicht in der config.h) => dafür ist jetzt die NanoWii Setup GUI da
+- es wird nur das NanoWii (ATmega32u4+MPU6050) unterstützt.
+- Flug Modi: Acro, 3D Acro(nur mit passenden ESC's), Level Mode, Horizon Mode
+- die PWM Ausgabe ist per OneShot PWM realisiert.(für 4xxHz und OneShot125 -> UltraESC only)
+- es werden nur die 6 HW PWM augänge benutzt.
+- Empfänger typen: 4-6 Einzelkanal, DSM2 Spektrum Satellit, DSMX Spektrum Satellit und 3 verschiedene PPM varianten.
+- solange man keinen Spektrum Satellit benutzt, ist der serial port (RX und TX) offen für ein Bluetooth modul.
+- das Gyro wird nach dem Akku anstecken solange kalibriert bis die werte annähernd 0 sind.
+- der Level Mode benutzt nun ganz leicht den ACC Z wert um Hohenschwankungen aus zu gleichen.
+- Alle Servos (Bi und Tricopter) laufen auch mit HW PWM
+- failsave gibt's nur noch per Empfängereinstellung. (ich halte das MWC interne failsave für ungut)
+- Batterieüberwachung ist erstmal nicht vorhanden
+- FS BEEP kann per Aux Kanal in der GUI aktiviert werden, damit der Buzzer Pin "Piept"/Buzzd wenn der Empfänger dem Empfang verloren hat. (Empfänger so einstellen das der aux Kanal bei failsave in die gewünschte richtung geht)
+
+
+Zum 3D Modus: der kann nur aktiviert werden wenn A die ESC's das können (UltraESC) und dies in der Setup GUI so eingestellt ist, und B nur wenn der Copter nicht gearmt ist.
+Wenn man in der Setup GUI 3D aktiv hat und die ESC's passend eingestellt sind, kann man dennoch "normal" fliegen. die Software rechnet die Reglersignale dann so um, das man im Positiven Bereich bleibt.
+
+Download: http://ultraesc.de/downloads/MWC21Na...wChromeApp.zip
+
+Weitere Daten:
+
+- CPU Geschwindigkeit 16 MHz
+- Flash Speichergröße 32kB (3,3kB braucht der Bootloader)
+- 6 Empfänger Eingänge (2 Aux Kanäle)
+- PPM Summ-Signal-Empfänger kompatibel
+- Spektrum Satellite Empfänger kompatibel
+- 6-8 Motorausgänge (Motor 1-6 haben 11-bit PWM)
+- Es wiegt weniger als 4g (ohne Pin's)
+- Größe 3,7 x 3,7 cm
+- höhere P Werte locker möglich dank 32U4 
+
+
+Anmerkung: Die aktuelle Charge hat keinen JP1 mehr, es ist jetzt eine Sicherung integriert, einfach ignorieren und loslegen.
+
+
+PDF Download
+
+Treiber Installation (Windows)
+
+Windows XP - 7:
+Gebt einfach den Pfad zur Leonardo.inf an (diese ist in dem Arduino Ordner unter Treiber)
+
+Windows 8:
+1. schreibt euch die folgenden Schritte auf, da man gleich Neustarten muss.
+2. geht mit dem Mauszeiger (im Desktop) an die obere rechte Ecke des Bildschirms und fahrt das Seitenmenü aus.
+3. klickt auf Einstellungen und dort auf PC-Einstellungen ändern.
+4. klickt dort auf Allgemein und da unter Erweiterter Start auf jetzt Neustarten.
+5. wählt Problem Behandlung.
+6. wählt erweiterte Optionen.
+7. -> Starteinstellungen
+8. Neustarten.. warten bis ein Auswahlfenster kommt
+9. wählt die Nummer 7 (erzwingen der Treibersignatur deaktivieren)
+10. nun könnt ihr den Treiber installieren (wie unter winXP oder 7)
+ 

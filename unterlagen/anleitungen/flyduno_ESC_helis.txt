@@ -1,0 +1,3 @@
+Winzige und leichte 7A ESC  2S. BLHELI Firmware inside. compatible with XP7A.
+Perfect für den Nanoquad und MT1306, keine Einstellung nötig.
+Silabs CPU basiert.

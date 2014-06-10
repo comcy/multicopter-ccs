@@ -1,0 +1,69 @@
+Original NanoQuad - Ein kleiner Kopter den man immer dabei  haben kann mit den Flugeigenschaften eines großen :-)
+Oft kopiert aber nie erreicht.
+Er ist grade mal 17x17cm groß und wiegt fertig aufgebaut ca. 130g
+
+Benötigt werden noch:
+-Nanowii
+-Motoren z.b. Tiger MT1306
+-5" Propeller
+-6-10A ESC
+-Lipo 2S 500-800mA
+-Empfänger je nach eigenem System. (Spectrum Sat. Buchse on Board, PPM oder Traditionel.)
+
+LEDs sind schon vorinstalliert, vorne Blaue und hinten Rote welche zum einem der Orientierung dienen,
+desweiteren als Lipo Alarm fungieren.(Anpassungen im Code nötig siehe unten)
+Landegestell/Lipohalter ist integriert, muss vorher ausgebrochen (besser geschnitten!) und mit Sekundenkleber verklebt werden.
+Das besondere am Nanoquad ist das Rahmendesign. Der umlaufende verstärkungs Rahmen macht ihn fast unzerstörbar, verhindert das seitliche Drehen der Motoren, verhindert ein aufschwingen und verbessert so ernorm die Flugeigenschaft des kleinen Quads!
+
+
+
+
+MultiWii-Sketch:
+Define Nanowii:
+  //#define FREEIMUv043     // same as FREEIMUv04 with final MPU6050 (with the right ACC scale)
+      #define NANOWII         // the smallest multiwii FC based on MPU6050 + pro micro based proc <- confirmed by Alex
+      //#define PIPO            // 9DOF board from erazz
+
+
+Lipo Monitor Einstellungen für 2S:
+/********************************************************************/
+  /****                             Buzzer                         ****/
+  /********************************************************************/
+    #define BUZZER
+    #define RCOPTIONSBEEP        //uncomment this if you want the buzzer to beep at any rcOptions change on channel Aux1 to Aux4
+ //#define ARMEDTIMEWARNING 330  // Trigger an alarm after a certain time of being armed [s] to save you lipo (if your TX does not have a countdown)
+
+  /********************************************************************/
+  /****           battery voltage monitoring                       ****/
+  /********************************************************************/
+    /* for V BAT monitoring
+       after the resistor divisor we should get [0V;5V]->[0;1023] on analog V_BATPIN
+       with R1=33k and R2=51k
+       vbat = [0;1023]*16/VBATSCALE
+       must be associated with #define BUZZER ! */
+    #define VBAT              // uncomment this line to activate the vbat code
+    #define VBATSCALE     210 // change this value if readed Battery voltage is different than real voltage
+    #define VBATLEVEL1_3S 68 // 10,7V
+    #define VBATLEVEL2_3S 65 // 10,3V
+    #define VBATLEVEL3_3S 61  // 9.9V
+    #define NO_VBAT       16 // Avoid beeping without any battery
+
+Bei Nutzung des Spektrum Satelite:
+
+ /**********************    Spektrum Satellite Reciver    *******************************/
+      /* The following lines apply only for Spektrum Satellite Receiver
+         Spektrum Satellites are 3V devices.  DO NOT connect to 5V!
+         For MEGA boards, attach sat grey wire to RX1, pin 19. Sat black wire to ground. Sat orange wire to Mega board's 3.3V (or any other 3V to 3.3V source).
+         For PROMINI, attach sat grey to RX0.  Attach sat black to ground. */
+      #define SPEKTRUM 1024
+      //#define SPEKTRUM 2048
+
+
+
+    /**********************************    Buzzer Pin    **********************************/
+      /* this moves the Buzzer pin from TXO to D8 for use with ppm sum or spectrum sat. RX (not needed if A32U4ALLPINS is active) */
+      #define D8BUZZER
+
+   
+
+Lötjumper entsprechend auf Nanoquad setzen, D8 pad und Mittelpad verbinden bei Satelite Nutzung.
