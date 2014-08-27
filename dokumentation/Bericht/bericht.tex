@@ -1,1 +1,68 @@
- 
+\documentclass[12pt,a4paper]{scrartcl}
+
+%Eingebundene Allgemeine Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{pdfpages}
+\usepackage{subfigure}
+\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=1.5cm]{geometry}
+
+%\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+  
+\usepackage{caption}
+\usepackage{listings}
+%\usepackage[hidelinks]{hyperref}
+
+\usepackage{wrapfig}
+%Spezeille Pakete und einstellungen
+
+%=============================
+% BibLatex
+%=============================
+%\usepackage[style=numeric]{biblatex}
+\usepackage[style=numeric]{biblatex} 
+\addbibresource{bibtex/literatur}
+
+%============================================
+%----------------Seitenlayout----------------
+%============================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} %erst mal leer machen
+\fancyfoot{} % - '' -
+
+\fancyhead[L]{\rightmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+
+\begin{document}
+
+\parindent0mm	%kein einzug bei Absatzbegin
+%===========================================================%
+%					    Titelseite
+%===========================================================%
+\pagenumbering{Roman}
+\include{dokumentrahmen/titelseite}
+\pagenumbering{arabic}
+%===========================================================%
+%					    Text
+%===========================================================%
+\tableofcontents
+\newpage
+\input{kapitel/einleitung}
+\input{kapitel/grundlagen}
+\input{kapitel/zusammenbau}
+
+
+%===========================================================%
+%					    Quellenverzeichnis
+%===========================================================%
+\printbibliography[title=Quellenverzeichnis, heading=bibintoc]
+\end{document}

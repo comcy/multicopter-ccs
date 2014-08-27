@@ -1,0 +1,46 @@
+\begin{titlepage}
+	\rule{1\textwidth}{2pt}
+	\vspace*{4cm}
+	\begin{center}
+	\LARGE{
+		\textbf{}
+		}
+
+	\vspace*{1.5cm}
+	
+	\LARGE{\textbf{Versuch: Diode als Temperatursensor}}
+	\vspace*{1.5cm}
+	
+	Sommersemester 2014
+	
+	\vspace*{1.5cm}
+	
+	von
+	\vspace*{1.5cm}
+
+	Michael Wörner (30137, CCS)
+
+	\vspace*{0.75cm}
+
+	aus Crailsheim
+	
+	\vspace*{2.5cm}
+	
+	Hochschule Aalen
+	
+	Hochschule für Technik und Wirtschaft
+	
+	UNIVERSITY OF APPLIED SCIENCES
+	
+	\vspace*{1.0cm}
+	\normalsize
+	
+	\begin{tabular}{ll}
+		%Betreuender Dozent: & Prof. Dr. Wilhelm Kleppmann\\
+		%Studiengang: & Computer Controlled Systems
+	\end{tabular}
+	\end{center}
+	\vfill
+	\rule{1\textwidth}{2pt}
+	
+\end{titlepage}

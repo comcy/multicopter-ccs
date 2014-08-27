@@ -1,0 +1,18 @@
+@Book{tieze,
+author = {Tietze, Ulrich and Schenk, Christoph and Gamm, Eberhard},
+title = {Halbleiterschaltungstechnik},
+publisher = {Springer},
+year = {2010},
+address = {Stuttgart},
+edition = {13}
+}
+
+@Book{papula_2,
+author = {Papula, L.},
+title = {Mathematik für Ingenieure und Naturwissenschaftler Band 2},
+publisher = {Vieweg+Teubner},
+year = {2009},
+adress = {Wiesbaden},
+edition = {12}
+}
+
